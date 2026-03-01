@@ -1,0 +1,7 @@
+for _, Thread in getallthreads() do
+	local Source = debug.info(Thread, 1, "s")
+	if Source and Source:match("%.a") then
+		coroutine.close(Thread)
+	end
+end
+warn("ok")
